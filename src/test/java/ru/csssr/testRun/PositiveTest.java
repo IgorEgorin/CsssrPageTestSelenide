@@ -13,7 +13,6 @@ public class PositiveTest extends Precondition {
     public void clickSecondTabTwiceOnQaPage() throws Exception {
         qaEngineerPage.doubleClickOnSecondTab();
         Assert.assertTrue(qaEngineerPage.
-                afterTwoClickOnSecondTabTextUnderTabsIsDiplayed());
-        Thread.sleep(10000);
+                afterTwoClickOnSecondTabTextUnderTabsIsDisplayed());
     }
 }

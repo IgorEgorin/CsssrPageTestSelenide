@@ -5,5 +5,5 @@ package ru.csssr.pagePackage;
  */
 public class AllPages {
 
-    public QaEngineerPage qaEngineerPage = new QaEngineerPage();
+    protected QaEngineerPage qaEngineerPage = new QaEngineerPage();
 }

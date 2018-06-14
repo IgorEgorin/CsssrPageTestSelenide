@@ -1,8 +1,6 @@
 package ru.csssr.pagePackage;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -19,27 +17,20 @@ public class QaEngineerPage {
     private SelenideElement textUnderFourTabs;
 
     public QaEngineerPage() {
-        this.tabOneQaPage = $("a[href='#']",0);
-        this.tabTwoQaPage = $("a[href='#']",1);
-        this.tabThreeQaPage = $("a[href='#']",2);
-        this.tabFourQaPage = $("a[href='#']",3);
-        this.textUnderFourTabs = $(By.xpath("//h4"));
+        this.tabOneQaPage = $("a[href='#']", 0);
+        this.tabTwoQaPage = $("a[href='#']", 1);
+        this.tabThreeQaPage = $("a[href='#']", 2);
+        this.tabFourQaPage = $("a[href='#']", 3);
+        this.textUnderFourTabs = $("div[style=\"display: none;\"]");
     }
-
 
     public void doubleClickOnSecondTab() {
         tabTwoQaPage.click();
-        textUnderFourTabs.isDisplayed();
         tabTwoQaPage.click();
     }
 
-    public boolean afterTwoClickOnSecondTabTextUnderTabsIsDiplayed() {
-        if (textUnderFourTabs.isDisplayed())
-            return true;
-        else {
-            textUnderFourTabs.is(Condition.disabled);
-            return false;
-        }
-
+    public boolean afterTwoClickOnSecondTabTextUnderTabsIsDisplayed() {
+        return textUnderFourTabs.isDisplayed();
     }
+
 }
